@@ -1,0 +1,52 @@
+
+int budget = int.Parse(Console.ReadLine());
+string season = Console.ReadLine();
+int fishers = int.Parse(Console.ReadLine());
+
+
+double priceRent = 0;
+
+if (season == "Spring")
+{
+    priceRent = 3000;
+}
+else if (season == "Summer")
+{
+    priceRent = 4200;
+
+}
+else if (season == "Autumn")
+{
+    priceRent = 4200;
+}
+else if (season == "Winter")
+{
+    priceRent = 2600;
+}
+
+if (fishers <= 6)
+{
+    priceRent = priceRent * 0.9;
+}
+else if (fishers >= 7 && fishers <= 11)
+{
+    priceRent = priceRent * 0.85;
+}
+else if (fishers >= 12)
+{
+    priceRent = priceRent * 0.75;
+}
+
+if (fishers % 2 == 0 && season != "Autumn")
+{
+    priceRent = priceRent * 0.95;
+}
+
+if (priceRent <= budget)
+{
+    Console.WriteLine($"Yes! You have {budget - priceRent:f2} leva left.");
+}
+else
+{
+    Console.WriteLine($"Not enough money! You need {priceRent - budget:f2} leva.");
+}
