@@ -1,0 +1,8 @@
+int pagesToRead = int.Parse(Console.ReadLine());
+int pagesReadForOneHour = int.Parse(Console.ReadLine());
+int daysToReadTheBook = int.Parse(Console.ReadLine());
+
+int hoursRequiredToReadTheBook = pagesToRead / pagesReadForOneHour;
+int hoursPerDay = hoursRequiredToReadTheBook / daysToReadTheBook;
+
+Console.WriteLine(hoursPerDay);
