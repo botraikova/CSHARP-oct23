@@ -1,0 +1,36 @@
+double depositedSum = double.Parse(Console.ReadLine());
+int depositLenghtInMonths = int.Parse(Console.ReadLine());
+double yearlyInterestPercentage = double.Parse(Console.ReadLine()) / 100;
+
+Console.WriteLine("Yearly interest percentage: " + 
+    yearlyInterestPercentage);
+
+
+double depositedSum = double.Parse(Console.ReadLine());
+int depositLenghtInMonths = int.Parse(Console.ReadLine());
+double yearlyInterestPercentage = double.Parse(Console.ReadLine()) / 100;
+
+double accumulatedInterestForYear = depositedSum * yearlyInterestPercentage;
+
+Console.WriteLine(accumulatedInterestForYear);
+
+double depositedSum = double.Parse(Console.ReadLine());
+int depositLenghtInMonths = int.Parse(Console.ReadLine());
+double yearlyInterestPercentage = double.Parse(Console.ReadLine()) / 100;
+
+
+double accumulatedInterestForYear = depositedSum * yearlyInterestPercentage;
+double accumulatedInterestForMonth = accumulatedInterestForYear / 12;
+
+Console.WriteLine(accumulatedInterestForMonth);
+
+double depositedSum = double.Parse(Console.ReadLine());
+int depositLenghtInMonths = int.Parse(Console.ReadLine());
+double yearlyInterestPercentage = double.Parse(Console.ReadLine()) / 100;
+
+
+double accumulatedInterestForYear = depositedSum * yearlyInterestPercentage;
+double accumulatedInterestForMonth = accumulatedInterestForYear / 12;
+double sumAfterDeposit = depositedSum + accumulatedInterestForMonth * depositLenghtInMonths;
+
+Console.WriteLine(sumAfterDeposit);
