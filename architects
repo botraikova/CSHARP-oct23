@@ -1,0 +1,6 @@
+string firstName = Console.ReadLine();
+int numberOfProjects = int.Parse(Console.ReadLine());
+
+double hoursPerProject = numberOfProjects * 3;
+
+Console.WriteLine($"The architect {firstName} will need {hoursPerProject} hours to complete {numberOfProjects} project/s.");
