@@ -1,0 +1,51 @@
+double moneyNeededForTrip = double.Parse(Console.ReadLine());
+double currentMoney = double.Parse(Console.ReadLine());
+
+int spendTimesInARow = 0;
+int daysCounter = 0;
+
+while (true)
+{ 
+    string action = Console.ReadLine();
+    double sum = double.Parse(Console.ReadLine());
+    daysCounter++; 
+
+    if (action == "save")
+    {
+        currentMoney += sum;
+        spendTimesInARow = 0; 
+
+        if (currentMoney >= moneyNeededForTrip)
+        {
+            break; 
+        }
+
+    }
+
+    else if (action == "spend")
+    {
+        spendTimesInARow++;
+        currentMoney -= sum;
+
+        if (currentMoney < 0)
+        {
+            currentMoney = 0;
+        }
+
+        if (spendTimesInARow >= 5)
+        {
+            break;       
+        }
+    }
+
+}
+
+if (currentMoney >= moneyNeededForTrip)
+{
+    Console.WriteLine($"You saved the money for {daysCounter} days.");
+}
+else
+{
+    Console.WriteLine("You can't save the money.");
+    Console.WriteLine($"{daysCounter}");
+}
