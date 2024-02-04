@@ -1,0 +1,41 @@
+int computersNumber = int.Parse(Console.ReadLine()); 
+
+double salesMade = 0; 
+double totalSalesMade = 0; 
+double totalComputersRating = 0; 
+int computersRatingCounter = 0; 
+for (int i = 0; i < computersNumber; i++) 
+{ 
+
+int computersModel = int.Parse(Console.ReadLine()); 
+double computersRating = computersModel % 10;
+int salesChance = computersModel / 10; 
+
+if (computersRating == 2) 
+{
+ salesMade = 0; 
+} 
+else if (computersRating == 3) 
+{ 
+salesMade = salesChance * 0.50; 
+}
+ else if(computersRating == 4)
+{ 
+salesMade = salesChance * 0.70; 
+} 
+else if (computersRating == 5)
+ {
+ salesMade = salesChance * 0.85; 
+}
+else 
+{ 
+salesMade = salesChance;
+}
+  
+totalSalesMade += salesMade;
+totalComputersRating += computersRating;
+computersRatingCounter++; 
+} 
+
+Console.WriteLine($"{totalSalesMade:f2}");
+Console.WriteLine($"{(totalComputersRating / computersRatingCounter):f2}");
