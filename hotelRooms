@@ -1,0 +1,76 @@
+string month = Console.ReadLine();
+int numberOfStays = int.Parse(Console.ReadLine());
+
+
+double priceForStudio = 0;
+double priceForApartment = 0;
+
+double totalStudio = 0;
+double totalApart = 0;
+
+
+switch (month)
+{
+    case "May":
+    case "October": 
+            
+        priceForStudio = 50;
+        priceForApartment = 65;
+           
+        break;
+
+    case "June":
+    case "September":
+
+        priceForStudio = 75.20;
+        priceForApartment = 68.70;
+
+        break;
+
+    case "July":
+    case "August":
+
+        priceForStudio = 76;
+        priceForApartment = 77;
+
+        break;
+}
+
+totalStudio = priceForStudio * numberOfStays;
+totalApart = priceForApartment * numberOfStays;
+
+
+if (month == "May" || month == "October")
+{
+    if (numberOfStays > 7 && numberOfStays <= 14)
+    {
+        totalStudio = totalStudio * 0.95;
+    }
+    else if (numberOfStays > 14)
+    {
+        totalStudio = totalStudio * 0.7;
+    }
+
+}
+else if (month == "June" || month == "September")
+{
+    if (numberOfStays > 14)
+    {
+        totalStudio = totalStudio * 0.8;
+    }
+}
+else if (month == "July" || month == "August")
+{
+    totalStudio = priceForStudio * numberOfStays;
+    totalApart = priceForApartment * numberOfStays;
+}
+
+
+if (numberOfStays > 14)
+{
+    totalApart = totalApart * 0.9;
+}
+
+
+Console.WriteLine($"Apartment: {totalApart:f2} lv.");
+Console.WriteLine($"Studio: {totalStudio:f2} lv.");
