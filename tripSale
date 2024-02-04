@@ -1,0 +1,49 @@
+int seaHolidayBundle = int.Parse(Console.ReadLine()); 
+int mountainHolidayBundle = int.Parse(Console.ReadLine()); 
+int seaBundlePrice = 680; 
+int mountainBundlePrice = 499;
+ int profitAmount = 0; 
+
+while (true) 
+{ 
+string commandStopOrBundle = Console.ReadLine();
+
+ if (commandStopOrBundle == "Stop") 
+{
+ break; 
+} 
+string bundleType = commandStopOrBundle; 
+
+switch (bundleType) 
+{ 
+case "sea": 
+if (seaHolidayBundle == 0) 
+{
+ break; 
+}
+ seaHolidayBundle--; 
+profitAmount += seaBundlePrice; 
+break; 
+
+case "mountain": 
+if (mountainHolidayBundle == 0) 
+{
+ break; 
+}
+
+ mountainHolidayBundle--; 
+profitAmount += mountainBundlePrice;
+ break; 
+}
+
+ if (seaHolidayBundle == 0 && mountainHolidayBundle == 0) 
+{
+ break; 
+}
+}
+ 
+if (seaHolidayBundle == 0 && mountainHolidayBundle == 0) 
+{
+ Console.WriteLine("Good job! Everything is sold."); 
+}
+ Console.WriteLine($"Profit: {profitAmount} leva.");
