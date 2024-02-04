@@ -1,0 +1,46 @@
+int poorGradesMaxCount = int.Parse(Console.ReadLine());
+
+
+int poorGradesCounter = 0;
+string lastProblemName = "";
+int tasksCount = 0;
+double gradesSum = 0;
+
+while (true) 
+{
+
+    string taskName = Console.ReadLine();
+    if (taskName == "Enough")
+    {
+        break;
+    }
+
+    lastProblemName = taskName;
+    tasksCount++;
+
+    int taskGrade = int.Parse(Console.ReadLine());
+    gradesSum += taskGrade;
+
+    if (taskGrade <= 4)
+    {
+        poorGradesCounter++;
+    }
+
+    if (poorGradesCounter >= poorGradesMaxCount)
+    {
+        break;
+    }
+}
+
+if (poorGradesCounter >= poorGradesMaxCount)
+{
+    Console.WriteLine($"You need a break, {poorGradesCounter} poor grades.");
+}
+else
+{
+
+    Console.WriteLine($"Average score: {gradesSum / tasksCount:f2}");
+    Console.WriteLine($"Number of problems: {tasksCount}");
+    Console.WriteLine($"Last problem: {lastProblemName}");
+
+}
