@@ -1,0 +1,58 @@
+double budget = double.Parse(Console.ReadLine());
+string season = Console.ReadLine();
+
+
+string destination;
+if (budget <= 100)
+{
+    destination = "Bulgaria";
+}
+else if (budget <= 1000)
+{
+    destination = "Balkans";
+}
+else
+{
+    destination = "Europe";
+}
+string placeToStayType = "";
+double budgetPercentageSpent = 0;
+switch (destination)
+{
+    case "Bulgaria":
+        switch (season)
+        { 
+        case "summer": budgetPercentageSpent = 0.3;
+                placeToStayType = "Camp";
+                break;
+        case "winter": budgetPercentageSpent = 0.7;
+                placeToStayType = "Hotel";
+                break;
+        }; 
+        break;
+
+
+        case "Balkans":
+        switch (season)
+                { 
+        case "summer": budgetPercentageSpent = 0.4;
+                        placeToStayType = "Camp"; break;
+        case "winter": budgetPercentageSpent = 0.8;
+                        placeToStayType = "Hotel";break;
+        }; 
+        break;
+
+
+        case "Europe":
+        {
+        budgetPercentageSpent = 0.9;
+        placeToStayType = "Hotel"; 
+        break;
+        }; 
+        
+
+}
+double moneySpent = budget * budgetPercentageSpent;
+
+Console.WriteLine($"Somewhere in {destination}");
+Console.WriteLine($"{placeToStayType} - {moneySpent:f2}");
