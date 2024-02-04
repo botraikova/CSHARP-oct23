@@ -1,0 +1,29 @@
+double filmBudget = double.Parse(Console.ReadLine());
+int numberOfPeople = int.Parse(Console.ReadLine());
+double priceOfCLothingPerPerson = double.Parse(Console.ReadLine());
+
+
+double priceOfDecor = filmBudget * 0.1;
+double priceForAllStat = numberOfPeople * priceOfCLothingPerPerson;
+
+if (numberOfPeople > 150)
+{
+    priceForAllStat = priceForAllStat * 0.9; 
+}
+
+double totalSum = priceForAllStat + priceOfDecor;
+
+if (totalSum > filmBudget)
+{ 
+double diff = totalSum - filmBudget;
+
+    Console.WriteLine("Not enough money!");
+    Console.WriteLine($"Wingard needs {diff:f2} leva more.");
+}
+
+else
+{
+    double diff = filmBudget - totalSum;
+    Console.WriteLine("Action!");
+    Console.WriteLine($"Wingard starts filming with {diff:f2} leva left.");
+}
