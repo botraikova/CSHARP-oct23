@@ -1,0 +1,12 @@
+int lenght = int.Parse(Console.ReadLine());
+int width = int.Parse(Console.ReadLine());
+int hight = int.Parse(Console.ReadLine());
+double percentage = double.Parse(Console.ReadLine());
+
+double volumeCapacity = lenght * width * hight;
+double volumeInLitres = volumeCapacity;
+
+double volumeOccupied = volumeCapacity * (percentage / 100) ;
+double volumeLitresFree = volumeCapacity * (1 - percentage / 100) * 0.001;
+
+Console.WriteLine(volumeLitresFree);
