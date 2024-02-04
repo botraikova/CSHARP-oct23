@@ -1,0 +1,48 @@
+string dessert = Console.ReadLine();
+int numberDesserts = int.Parse(Console.ReadLine());
+int dayOfDecember = int.Parse(Console.ReadLine());
+
+double pricePerPiece = 0;
+
+if (dayOfDecember <= 15)
+{
+    switch (dessert)
+    {
+        case "Cake": pricePerPiece = 24; break;
+        case "Souffle": pricePerPiece = 6.66; break;
+        case "Baklava": pricePerPiece = 12.60; break;
+    }
+}
+else if (dayOfDecember > 15)
+{
+    switch (dessert)
+    {
+        case "Cake": pricePerPiece = 28.70; break;
+        case "Souffle": pricePerPiece = 9.80; break;
+        case "Baklava": pricePerPiece = 16.98; break;
+    }
+}
+
+double totalPrice = numberDesserts * pricePerPiece;
+
+if (dayOfDecember <= 22 && totalPrice > 100 && totalPrice <= 200)
+{
+    totalPrice *= 0.85;
+}
+else if (dayOfDecember <= 22 && totalPrice > 200)
+{
+    totalPrice *= 0.75;
+}
+else
+{
+    totalPrice = numberDesserts * pricePerPiece;
+}
+
+
+if (dayOfDecember <= 15)
+{
+    totalPrice *= 0.90;
+}
+
+
+Console.WriteLine($"{totalPrice:f2}");
