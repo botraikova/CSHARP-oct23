@@ -1,0 +1,24 @@
+double priceTrip = double.Parse(Console.ReadLine());
+int numberPuzzle = int.Parse(Console.ReadLine());
+int numberDoll = int.Parse(Console.ReadLine());
+int numberTeddyBear = int.Parse(Console.ReadLine());
+int numberMinion = int.Parse(Console.ReadLine());
+int numberTruck = int.Parse(Console.ReadLine());
+
+double totalSum = numberPuzzle * 2.60 + numberDoll * 3 + numberTeddyBear * 4.10 + numberMinion * 8.20 + numberTruck * 2;
+int totalNumberOfToys = numberPuzzle + numberDoll + numberTeddyBear + numberTruck + numberMinion;
+
+
+if (totalNumberOfToys >= 50)
+{
+    totalSum = totalSum * 0.75;
+}
+
+double sumAfterRent = totalSum * 0.9;
+
+if (sumAfterRent >= priceTrip)
+{
+    Console.WriteLine($"Yes! {sumAfterRent - priceTrip:F2} lv left.");
+}
+else
+    Console.WriteLine($"Not enough money! {priceTrip - sumAfterRent:F2} lv needed.");
