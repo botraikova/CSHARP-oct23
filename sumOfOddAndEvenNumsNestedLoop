@@ -1,0 +1,42 @@
+int primeNumbersSum = 0;
+int nonPrimeNumbersSum = 0;
+
+while (true)
+{ 
+    string stopCommandOrNumber = Console.ReadLine();
+
+    if (stopCommandOrNumber == "stop")
+    {
+        break;
+    }
+    int number = int.Parse(stopCommandOrNumber);
+
+    if (number < 0) 
+    {
+        Console.WriteLine("Number is negative.");
+        continue; 
+    }
+
+    bool isNumberPrime = true;
+
+    for (int i = 2; i < number; i++)
+    {
+        if (number % i == 0)
+        {
+            isNumberPrime = false;
+            break; 
+        }
+    }
+
+    if (isNumberPrime)
+    {
+        primeNumbersSum += number;
+    }
+    else
+    { 
+    nonPrimeNumbersSum += number;   
+    }
+    
+}
+Console.WriteLine($"Sum of all prime numbers is: {primeNumbersSum}");
+Console.WriteLine($"Sum of all non prime numbers is: {nonPrimeNumbersSum}");
