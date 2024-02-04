@@ -1,0 +1,39 @@
+int numberCats = int.Parse(Console.ReadLine());
+
+int counterSmallCats = 0;
+int counterBigCats = 0;
+int counterGiantCats = 0;
+double totalFoodAllCats = 0;
+
+for (int currentNumber = 0; currentNumber < numberCats; currentNumber++)
+{
+    double gramsFoodPerCat = double.Parse(Console.ReadLine());
+
+    if (gramsFoodPerCat >= 100 && gramsFoodPerCat < 200)
+    {
+        counterSmallCats++;
+        totalFoodAllCats += gramsFoodPerCat;
+    }
+
+    if (gramsFoodPerCat >= 200 && gramsFoodPerCat < 300)
+    {
+        counterBigCats++;
+        totalFoodAllCats += gramsFoodPerCat;
+    }
+
+
+    if (gramsFoodPerCat >= 300 && gramsFoodPerCat < 400)
+    {
+        counterGiantCats++;
+        totalFoodAllCats += gramsFoodPerCat;
+    }
+}
+
+double totalFoodPerCat = totalFoodAllCats / 1000;
+double finalPricePerCat = totalFoodPerCat * 12.45;
+
+
+Console.WriteLine($"Group 1: {counterSmallCats} cats.");
+Console.WriteLine($"Group 2: {counterBigCats} cats.");
+Console.WriteLine($"Group 3: {counterGiantCats} cats.");
+Console.WriteLine($"Price for food per day: {finalPricePerCat:f2} lv.");
