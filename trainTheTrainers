@@ -1,0 +1,34 @@
+int judgesCount = int.Parse(Console.ReadLine());
+
+double allPresentationsTotalGrade = 0;
+int presentationsCount = 0;
+
+while (true)
+{
+    string finishCommandOrPresentationName = Console.ReadLine();
+
+    if (finishCommandOrPresentationName == "Finish")
+    {
+        break;
+    }
+
+    presentationsCount++;
+    string presentationName = finishCommandOrPresentationName;
+    double totalPresentationGrade = 0;
+   
+
+
+    for (int i = 0; i < judgesCount; i++)
+    { 
+    double grade = double.Parse(Console.ReadLine());
+        totalPresentationGrade += grade;
+    }
+
+    double averagePresentationGrade = totalPresentationGrade / judgesCount;
+    allPresentationsTotalGrade += averagePresentationGrade;
+
+    Console.WriteLine($"{presentationName} - {averagePresentationGrade:f2}.");
+
+}
+
+Console.WriteLine($"Student's final assessment is {allPresentationsTotalGrade / presentationsCount:f2}.");
