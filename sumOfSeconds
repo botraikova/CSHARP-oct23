@@ -1,0 +1,20 @@
+int firstSeconds = int.Parse(Console.ReadLine());
+int secondSeconds = int.Parse(Console.ReadLine());
+int thirdSeconds = int.Parse(Console.ReadLine());
+
+int totalSeconds = firstSeconds + secondSeconds + thirdSeconds;
+// Console.WriteLine(totalSeconds);
+int minutes = totalSeconds / 60;
+int remainingSeconds = totalSeconds % 60;
+// total seconds = 125 / 60 = 2 mins без остатък
+// int remainingSeconds = totalSeconds - (minutes * 60) = 135 - 120 = 15 sec;
+// Console.WriteLine($"{minutes}:{remainingSeconds}");
+
+if (remainingSeconds < 10)
+{
+    Console.WriteLine($"{minutes}:0{remainingSeconds}");
+}
+else
+{
+    Console.WriteLine($"{minutes}:{remainingSeconds}");
+}
