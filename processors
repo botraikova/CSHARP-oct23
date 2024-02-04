@@ -1,0 +1,22 @@
+int numberProcessors = int.Parse(Console.ReadLine());
+int numberWorkers = int.Parse(Console.ReadLine());
+int numberWorkingDays = int.Parse(Console.ReadLine());
+
+
+double hoursNeeded = numberWorkers * numberWorkingDays * 8;
+double production = Math.Floor(hoursNeeded/3);
+
+double pricePerPiece = 110.10;
+
+if (production < numberProcessors)
+{
+    double numberLosses = numberProcessors - production;
+    double losses = (Math.Abs(numberLosses * 110.10));
+    Console.WriteLine($"Losses: -> {losses:f2} BGN");
+}
+else if (production >= numberProcessors)
+{
+    double numberProfits = (production - numberProcessors);
+    double profits = (Math.Abs(numberProfits * 110.10));
+    Console.WriteLine($"Profit: -> {profits:f2} BGN");
+}
