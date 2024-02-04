@@ -1,0 +1,14 @@
+int plastic = int.Parse(Console.ReadLine()) + 2;
+double paintInLitres = double.Parse(Console.ReadLine()) * 1.1;
+int thinner = int.Parse(Console.ReadLine());
+int hoursOfWork = int.Parse(Console.ReadLine());
+
+double plasticPrice = plastic * 1.50;
+double paintPrice = paintInLitres * 14.50;
+double thinnerPrice = thinner * 5.00;
+
+double materialCost = plasticPrice + paintPrice + thinnerPrice + 0.4;
+double workersPricePerHour = materialCost * 0.3;
+double totalWorkersPay = workersPricePerHour * hoursOfWork;
+
+Console.WriteLine(materialCost + totalWorkersPay);
