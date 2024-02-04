@@ -1,0 +1,18 @@
+string typeOfMovie = Console.ReadLine();
+int rows = int.Parse(Console.ReadLine());
+int columns = int.Parse(Console.ReadLine());    
+
+
+int seatsCount = rows * columns;
+double price = 0;
+
+switch (typeOfMovie)
+{
+    case "Premiere": price = 12; break;
+    case "Normal": price = 7.5; break;
+    case "Discount": price = 5; break;
+}
+
+double totalPrice = price * seatsCount;
+
+Console.WriteLine($"{totalPrice:f2} leva");
