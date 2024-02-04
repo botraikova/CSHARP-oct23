@@ -1,0 +1,26 @@
+double petersBudget = double.Parse(Console.ReadLine());
+int numberGPU = int.Parse(Console.ReadLine());
+int numberCPU = int.Parse(Console.ReadLine());
+int numberRAM = int.Parse(Console.ReadLine());
+
+double sumVideoCard = numberGPU * 250;
+double sumCentralUnit = (sumVideoCard * 0.35) * numberCPU;
+double sumRam = (sumVideoCard * 0.10 ) * numberRAM;
+
+double totalSumOfAll = sumVideoCard + sumCentralUnit + sumRam;
+
+if (numberGPU > numberCPU)
+{
+    totalSumOfAll = totalSumOfAll * 0.85;
+}
+
+if (totalSumOfAll <= petersBudget)
+{
+    double moneyLeft = petersBudget - totalSumOfAll;
+ Console.WriteLine($"You have {moneyLeft:f2} leva left!");
+}
+else
+{ 
+double moneyNeeded = totalSumOfAll - petersBudget;
+    Console.WriteLine($"Not enough money! You need {moneyNeeded:f2} leva more!");
+}
