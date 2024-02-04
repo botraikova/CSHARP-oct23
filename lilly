@@ -1,0 +1,31 @@
+int age = int.Parse(Console.ReadLine());
+double machinePrice = double.Parse(Console.ReadLine());
+int toyPrice = int.Parse(Console.ReadLine());
+
+int sum = 0;
+int moneyToBeReceived = 10;
+
+for ( int currentAge = 1; currentAge <= age; currentAge++) // тъй като са години, не започват от 0 и се върти до знак <=;
+{
+    if (currentAge % 2 == 0)
+    {
+        sum += moneyToBeReceived - 1; //братчето взима 1лв всеки път
+        moneyToBeReceived += 10;
+
+    }
+    else
+    {
+        sum += toyPrice;
+    }
+
+
+}
+
+if (sum >= machinePrice)
+{
+    Console.WriteLine($"Yes! {sum-machinePrice:f2}");
+}
+else
+{
+    Console.WriteLine($"No! {machinePrice-sum:f2}");
+}
