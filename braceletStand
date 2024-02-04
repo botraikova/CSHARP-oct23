@@ -1,0 +1,19 @@
+double pocketMoneyPerDay = double.Parse(Console.ReadLine()); // 5.12
+double profitPerDay = double.Parse(Console.ReadLine()); // 32.05
+double expenses = double.Parse(Console.ReadLine()); // 15
+double priceOfGift = double.Parse(Console.ReadLine()); 
+
+double pocketMoneyForFiveDays = pocketMoneyPerDay * 5; 
+double profitForFiveDays = profitPerDay * 5; 
+
+double sumOfSavings = pocketMoneyForFiveDays + profitForFiveDays; 
+double moneyLeft = sumOfSavings - expenses; 
+
+if (moneyLeft >= priceOfGift)
+{
+    Console.WriteLine($"Profit: {moneyLeft:f2} BGN, the gift has been purchased.");
+}
+else
+{
+    Console.WriteLine($"Insufficient money: {priceOfGift - moneyLeft:f2} BGN.");
+}
