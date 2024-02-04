@@ -1,0 +1,5 @@
+int dogFoodBoxes = int.Parse(Console.ReadLine());
+int catFoodBoxes = int.Parse(Console.ReadLine());
+
+double total = dogFoodBoxes * 2.50 + catFoodBoxes * 4.00;
+Console.WriteLine($"{total} lv.");
