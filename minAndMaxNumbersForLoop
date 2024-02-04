@@ -1,0 +1,24 @@
+int n = int.Parse(Console.ReadLine());
+
+int minNum = int.MaxValue;
+int maxNum = int.MinValue;
+
+
+for (int i = 1; i <= n; i++)
+{ 
+int currentNumber = int.Parse(Console.ReadLine());
+
+    if (currentNumber < minNum)
+    {
+        minNum = currentNumber;
+    }
+
+    if (currentNumber > maxNum)
+    {
+        maxNum = currentNumber;
+    }
+
+}
+
+Console.WriteLine($"Max number: {maxNum}");
+Console.WriteLine($"Min number: {minNum}");
