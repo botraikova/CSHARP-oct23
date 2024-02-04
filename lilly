@@ -5,11 +5,10 @@ int toyPrice = int.Parse(Console.ReadLine());
 int sum = 0;
 int moneyToBeReceived = 10;
 
-for ( int currentAge = 1; currentAge <= age; currentAge++) // тъй като са години, не започват от 0 и се върти до знак <=;
-{
+for ( int currentAge = 1; currentAge <= age; currentAge++) 
     if (currentAge % 2 == 0)
     {
-        sum += moneyToBeReceived - 1; //братчето взима 1лв всеки път
+        sum += moneyToBeReceived - 1;
         moneyToBeReceived += 10;
 
     }
