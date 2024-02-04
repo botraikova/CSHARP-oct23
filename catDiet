@@ -1,0 +1,16 @@
+double fats = double.Parse(Console.ReadLine());
+double proteins = double.Parse(Console.ReadLine());
+double carbs = double.Parse(Console.ReadLine());
+double calories = double.Parse(Console.ReadLine());
+double water = double.Parse(Console.ReadLine());
+
+double totalFats = ((fats / 100) * 2500) / 9;
+double totalProteins = ((proteins / 100) * 2500) / 4;
+double totalCarbs = ((carbs / 100) * 2500) / 4;
+
+double totalFood = totalFats + totalProteins + totalCarbs;
+double foodPerGram = 2500 / totalFood;
+
+double caloriesFinal = foodPerGram * (1 - water / 100);
+
+Console.WriteLine($"{caloriesFinal:F4}");
